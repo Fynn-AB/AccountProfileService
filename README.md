@@ -15,22 +15,31 @@ An ASP.NET Core Web API for managing user accounts and profiles using ASP.NET Id
 ---
 
 ## 📁 Project Structure
-AccountProfileService/
-├── Controllers/ # API endpoints (e.g., UserController)
-├── DTOs/ # Data Transfer Objects (e.g., CreateUserDto, UpdateUserDto)
-├── Services/ # Business logic and Identity integration
-├── Models/ # Identity user models (e.g., UserEntity)
-├── Tests/ # Unit test project using xUnit and Moq
-├── Program.cs # App startup
-├── appsettings.json # Configuration
-└── README.md # You're here
+```
+AccountProfileService/           # Solution Root  
+  
+├── AccountProfileService/        
+    ├── Controllers/                
+    ├── DTOs/                        
+    ├── Program.cs                 
+    └── appsettings.json
+   
+├── AccountProfileService.Tests/ # Test Project  
+    └── UserServiceTests.cs      # Unit tests using xUnit and Moq  
+  
+├── Data/
+    ├── Database/                  
+    ├── DbContext/                 
+    ├── Entities/                
+    ├── Migrations/                
+    └── Services/                 
+  
+└── README.md                       # You're here
+```  
+
 
 ---
 
-
-Passwords are hashed automatically via Identity.
-DTOs prevent over-posting and hide sensitive fields (like password hashes).
-Only essential fields are exposed in GetUserDto.
 
 ## 🧪 Unit Testing
 
@@ -43,8 +52,10 @@ They cover:
 - User deletion
 - Failure handling
 
-📦 Tech Stack
-ASP.NET Core 9
-ASP.NET Identity
-xUnit & Moq
-C# 11 / 12
+---
+
+## 📦 Tech Stack
+ASP.NET Core 9  
+ASP.NET Identity  
+xUnit & Moq  
+C# 11 / 12  
